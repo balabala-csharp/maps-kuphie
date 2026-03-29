@@ -1,130 +1,190 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Maps Kuphie</title>
+<meta charset="UTF-8">
+<title>Maps Kuphie</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    body {
-      background: #0d0d0d;
-      color: white;
-    }
+body {
+  background: #0b0b0b;
+  color: white;
+}
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-      url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+}
 
-    .hero h1 {
-      font-size: 50px;
-      color: orange;
-    }
+.navbar h1 {
+  color: orange;
+}
 
-    .hero p {
-      margin-top: 10px;
-      font-size: 18px;
-      opacity: 0.8;
-    }
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
 
-    /* SECTION */
-    .section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .card {
-      background: #1a1a1a;
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 15px;
-      transition: 0.3s;
-    }
+.hero h2 {
+  font-size: 50px;
+  color: orange;
+}
 
-    .card:hover {
-      transform: scale(1.03);
-      background: #222;
-    }
+.hero p {
+  margin-top: 10px;
+  opacity: 0.8;
+}
 
-    h2 {
-      color: orange;
-      margin-bottom: 10px;
-    }
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
 
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: orange;
-      color: black;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.section h2 {
+  color: orange;
+  margin-bottom: 30px;
+}
 
-    .btn:hover {
-      background: #ffaa00;
-    }
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-  </style>
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  width: 250px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: #222;
+}
+
+/* ABOUT */
+.about {
+  max-width: 800px;
+  margin: auto;
+  opacity: 0.8;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: orange;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px;
+  text-align: center;
+  background: #111;
+  opacity: 0.6;
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+  <h1>MAPS KUPHIE</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Lokasi</a>
+  </div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <div>
-    <h1>MAPS KUPHIE</h1>
-    <p>Tempat nongkrong anak muda Medan • Murah • 24 Jam</p>
+    <h2>Nongkrong 24 Jam</h2>
+    <p>Tempat santai mahasiswa & anak muda Medan</p>
     <a href="#" class="btn">Kunjungi Sekarang</a>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+  <h2>Kenapa Maps Kuphie?</h2>
+  <div class="features">
+    <div class="card">
+      <h3>Harga Murah</h3>
+      <p>Cocok untuk kantong mahasiswa</p>
+    </div>
+    <div class="card">
+      <h3>24 Jam</h3>
+      <p>Bisa nongkrong kapan aja</p>
+    </div>
+    <div class="card">
+      <h3>Dekat USU</h3>
+      <p>Strategis & gampang dijangkau</p>
+    </div>
   </div>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
-  <div class="card">
-    <h2>Tentang Kami</h2>
-    <p>
-      Maps Kuphie bukan sekadar cafe. Ini tempat kumpul, cerita,
-      dan jadi rumah kedua buat mahasiswa dan anak muda di Medan.
-      Kami hadir dengan harga ramah di kantong, tanpa mengurangi kenyamanan.
-    </p>
-  </div>
+  <h2>Tentang Kami</h2>
+  <p class="about">
+    Maps Kuphie adalah cafe sederhana yang lahir dari mimpi besar.
+    Tempat berkumpulnya mahasiswa, anak muda, dan semua yang ingin
+    menikmati suasana santai tanpa harus mahal.
+  </p>
+</div>
 
-  <div class="card">
-    <h2>Kenapa Pilih Kami?</h2>
-    <p>
-      ✔ Harga kaki lima<br>
-      ✔ Buka 24 jam<br>
-      ✔ Cocok buat tugas & nongkrong<br>
-      ✔ Dekat USU<br>
-    </p>
-  </div>
+<!-- LOKASI -->
+<div class="section">
+  <h2>Lokasi</h2>
+  <p>Medan - dekat USU</p>
+  <a href="#" class="btn">Buka Google Maps</a>
+</div>
 
-  <div class="card">
-    <h2>Lokasi</h2>
-    <p>Medan - dekat USU</p>
-    <a href="#" class="btn">Buka Google Maps</a>
-  </div>
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Maps Kuphie - Nongkrong Santai Tanpa Ribet
 </div>
 
 </body>
