@@ -1,134 +1,145 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Maps Kuphie</title>
+  <meta charset="UTF-8">
+  <title>Maps Kuphie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-<style>
+    body {
+      background: #0b0b0b;
+      color: white;
+      overflow-x: hidden;
+    }
 
-body {
-  background: #0b0b0b;
-  color: white;
-}
+    /* EFEK REVEAL (SCROLL ANIMATION) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
 
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-}
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.navbar h1 {
-  color: orange;
-}
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
 
-.navbar a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
+    .navbar h1 { color: orange; }
+    .navbar a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-  url('MapsKuphie.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('MapsKuphie.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-  <div class="hero">
-  ...
-</div>
-  
+    .hero h2 { font-size: 50px; color: orange; }
+    .hero p { margin-top: 10px; opacity: 0.8; }
 
-.hero h2 {
-  font-size: 50px;
-  color: orange;
-}
+    /* SECTION KHUSUS DENGAN BACKGROUND GAMBAR */
+    .section-features {
+      padding: 100px 20px;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('cafetype.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Efek Parallax */
+    }
 
-.hero p {
-  margin-top: 10px;
-  opacity: 0.8;
-}
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-/* SECTION */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
+    .section h2 {
+      color: orange;
+      margin-bottom: 30px;
+      cursor: default; /* Agar tidak terlihat seperti link */
+    }
 
-.section h2 {
-  color: orange;
-  margin-bottom: 30px;
-}
+    /* FEATURES */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
 
-/* FEATURES */
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
+    .card {
+      background: #1a1a1a;
+      padding: 25px;
+      width: 250px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
 
-.card {
-  background: #1a1a1a;
-  padding: 25px;
-  width: 250px;
-  border-radius: 15px;
-  transition: 0.3s;
-}
+    .card:hover {
+      transform: translateY(-10px);
+      background: #222;
+    }
 
-.card:hover {
-  transform: translateY(-10px);
-  background: #222;
-}
+    /* ABOUT */
+    .about {
+      max-width: 800px;
+      margin: auto;
+      opacity: 0.8;
+      cursor: default;
+    }
 
-/* ABOUT */
-.about {
-  max-width: 800px;
-  margin: auto;
-  opacity: 0.8;
-}
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: orange;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: orange;
-  color: black;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* FOOTER */
-.footer {
-  padding: 30px;
-  text-align: center;
-  background: #111;
-  opacity: 0.6;
-}
-
-</style>
+    /* FOOTER */
+    .footer {
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      opacity: 0.6;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
   <h1>MAPS KUPHIE</h1>
   <div>
@@ -138,40 +149,35 @@ body {
   </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
-  <div>
-    <h2>Nongkrong 24 Jam</h2>
+  <div class="reveal active"> <h2>Nongkrong 24 Jam</h2>
     <p>Tempat santai mahasiswa & anak muda Medan</p>
     <a href="#" class="btn">Kunjungi Sekarang</a>
   </div>
 </div>
 
-<!-- FEATURES -->
-<div class="section">
-  <h2>Kenapa Maps Kuphie?</h2>
-  <div class="features">
-    <div class="card">
-      <h3>Harga Murah</h3>
-      <p>Cocok untuk kantong mahasiswa</p>
-    </div>
-    <div class="card">
-      <h3>24 Jam</h3>
-      <p>Bisa nongkrong kapan aja</p>
-    </div>
-    <div class="card">
-      <h3>Dekat USU</h3>
-      <p>Strategis & gampang dijangkau</p>
+<div class="section-features">
+  <div class="reveal">
+    <h2>Kenapa Maps Kuphie?</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Harga Murah</h3>
+        <p>Cocok untuk kantong mahasiswa</p>
+      </div>
+      <div class="card">
+        <h3>24 Jam</h3>
+        <p>Bisa nongkrong kapan aja</p>
+      </div>
+      <div class="card">
+        <h3>Dekat USU</h3>
+        <p>Strategis & gampang dijangkau</p>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<div class="section-image"></div>
-
-<div class="section">
+<div class="section reveal">
   <h2>Tentang Kami</h2>
-  
   <p class="about">
     Maps Kuphie adalah cafe sederhana yang lahir dari mimpi besar.
     Tempat berkumpulnya mahasiswa, anak muda, dan semua yang ingin
@@ -179,18 +185,35 @@ body {
   </p>
 </div>
 
-<!-- LOKASI -->
-<div class="section">
+<div class="section reveal">
   <h2>📍Lihat Lokasi Kami</h2>
   <p>Medan - dekat USU</p>
-<a href="https://share.google/h3bZwProusgjY2PtH" target="_blank" class="btn">
-  Buka Google Maps
-</a></div>
+  <a href="https://share.google/h3bZwProusgjY2PtH" target="_blank" class="btn">
+    Buka Google Maps
+  </a>
+</div>
 
-<!-- FOOTER -->
 <div class="footer">
   © 2026 Maps Kuphie - Nongkrong Santai Tanpa Ribet
 </div>
+
+<script>
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 100;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", reveal);
+  // Jalankan saat load pertama kali
+  reveal();
+</script>
 
 </body>
 </html>
