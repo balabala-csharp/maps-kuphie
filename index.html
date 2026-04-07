@@ -7,11 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+.section-features {
+  padding: 80px 20px;
+  text-align: center;
+  /* Mengambil gambar dari GitHub */
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('cafetype.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Membuat efek parallax jika diinginkan */
 }
 
 body {
@@ -151,6 +154,24 @@ body {
 
 <body>
 
+  <div class="section section-features">
+  <h2>Kenapa Maps Kuphie?</h2>
+  <div class="features">
+    <div class="card">
+      <h3>Harga Murah</h3>
+      <p>Cocok untuk kantong mahasiswa</p>
+    </div>
+    <div class="card">
+      <h3>24 Jam</h3>
+      <p>Bisa nongkrong kapan aja</p>
+    </div>
+    <div class="card">
+      <h3>Dekat USU</h3>
+      <p>Strategis & gampang dijangkau</p>
+    </div>
+  </div>
+</div>
+  
 <!-- NAVBAR -->
 <div class="navbar">
   <h1>MAPS KUPHIE</h1>
