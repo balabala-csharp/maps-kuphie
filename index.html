@@ -19,11 +19,24 @@
       overflow-x: hidden;
     }
 
-    /* EFEK REVEAL (SCROLL ANIMATION) */
+    /* 1. MEMATIKAN KLIK PADA TEKS */
+    h2, p.about, .section h2 {
+      cursor: default;
+      user-select: none; /* Teks tidak bisa di-highlight/seleksi */
+      pointer-events: none; /* Mematikan semua interaksi klik/hover */
+    }
+
+    /* Tombol tetap harus bisa diklik */
+    .btn, .navbar a {
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    /* EFEK REVEAL */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
     }
 
     .reveal.active {
@@ -44,17 +57,13 @@
       z-index: 1000;
     }
 
-    .navbar h1 { color: orange; }
-    .navbar a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-    }
+    .navbar h1 { color: orange; pointer-events: none; }
+    .navbar a { color: white; margin-left: 20px; text-decoration: none; }
 
     /* HERO */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('MapsKuphie.png');
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('MapsKuphie.png');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -63,29 +72,24 @@
       text-align: center;
     }
 
-    .hero h2 { font-size: 50px; color: orange; }
-    .hero p { margin-top: 10px; opacity: 0.8; }
+    .hero h2 { font-size: 50px; color: orange; pointer-events: none; }
 
-    /* SECTION KHUSUS DENGAN BACKGROUND GAMBAR */
-    .section-features {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('cafetype.png');
+    /* 2. BACKGROUND BESAR SAMPAI KE BAWAH */
+    .main-container {
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('cafetype.png');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Efek Parallax */
+      background-attachment: fixed; /* Efek parallax agar gambar tetap diam saat scroll */
+      min-height: 100vh; /* Minimal setinggi layar */
+      padding-bottom: 100px;
     }
 
     .section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
 
-    .section h2 {
-      color: orange;
-      margin-bottom: 30px;
-      cursor: default; /* Agar tidak terlihat seperti link */
-    }
+    .section h2 { color: orange; margin-bottom: 40px; font-size: 32px; }
 
     /* FEATURES */
     .features {
@@ -96,44 +100,47 @@
     }
 
     .card {
-      background: #1a1a1a;
-      padding: 25px;
-      width: 250px;
+      background: rgba(26, 26, 26, 0.9);
+      padding: 30px;
+      width: 280px;
       border-radius: 15px;
       transition: 0.3s;
+      pointer-events: auto; /* Card bisa di-hover */
     }
 
     .card:hover {
       transform: translateY(-10px);
-      background: #222;
+      background: orange;
+      color: black;
     }
 
-    /* ABOUT */
     .about {
       max-width: 800px;
       margin: auto;
-      opacity: 0.8;
-      cursor: default;
+      line-height: 1.8;
+      opacity: 0.9;
     }
 
-    /* BUTTON */
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
+      margin-top: 25px;
+      padding: 15px 35px;
       background: orange;
       color: black;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
 
-    /* FOOTER */
+    .btn:hover { transform: scale(1.05); }
+
     .footer {
-      padding: 30px;
+      padding: 40px;
       text-align: center;
-      background: #111;
-      opacity: 0.6;
+      background: #000;
+      border-top: 1px solid #222;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -150,14 +157,16 @@
 </div>
 
 <div class="hero">
-  <div class="reveal active"> <h2>Nongkrong 24 Jam</h2>
+  <div class="reveal active">
+    <h2>Nongkrong 24 Jam</h2>
     <p>Tempat santai mahasiswa & anak muda Medan</p>
     <a href="#" class="btn">Kunjungi Sekarang</a>
   </div>
 </div>
 
-<div class="section-features">
-  <div class="reveal">
+<div class="main-container">
+  
+  <div class="section reveal">
     <h2>Kenapa Maps Kuphie?</h2>
     <div class="features">
       <div class="card">
@@ -174,23 +183,24 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="section reveal">
-  <h2>Tentang Kami</h2>
-  <p class="about">
-    Maps Kuphie adalah cafe sederhana yang lahir dari mimpi besar.
-    Tempat berkumpulnya mahasiswa, anak muda, dan semua yang ingin
-    menikmati suasana santai tanpa harus mahal.
-  </p>
-</div>
+  <div class="section reveal">
+    <h2>Tentang Kami</h2>
+    <p class="about">
+      Maps Kuphie adalah cafe sederhana yang lahir dari mimpi besar.
+      Tempat berkumpulnya mahasiswa, anak muda, dan semua yang ingin
+      menikmati suasana santai tanpa harus mahal.
+    </p>
+  </div>
 
-<div class="section reveal">
-  <h2>📍Lihat Lokasi Kami</h2>
-  <p>Medan - dekat USU</p>
-  <a href="https://share.google/h3bZwProusgjY2PtH" target="_blank" class="btn">
-    Buka Google Maps
-  </a>
+  <div class="section reveal">
+    <h2>📍 Lokasi Kami</h2>
+    <p>Medan - dekat kampus USU</p>
+    <a href="https://share.google/h3bZwProusgjY2PtH" target="_blank" class="btn">
+      Buka Google Maps
+    </a>
+  </div>
+
 </div>
 
 <div class="footer">
@@ -209,9 +219,7 @@
       }
     }
   }
-
   window.addEventListener("scroll", reveal);
-  // Jalankan saat load pertama kali
   reveal();
 </script>
 
